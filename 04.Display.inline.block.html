@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>display：inline-block</title>
+    <style>
+        .ib {
+            display: inline-block;
+            padding: 30px;
+            background: green;
+            color: white;
+            font-size: 44px;
+        }
+        .no_space{
+            font-size:0;/* 所有浏览器 */
+            *word-spacing:-1px;/* IE6、7 */
+        }
+        .dib{
+            font-size: 12px;
+            letter-spacing: normal;
+            word-spacing: normal;
+            vertical-align:top;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="ib">1</div>
+    1
+    <div class="ib">2</div>
+    2
+    <div class="ib">3</div>
+    <div class="ib">4</div>
+    <div class="ib">5</div><div class="ib">6</div>
+</div>
+<div class="no_space">
+    <div class="ib ">1</div>
+    1
+    <div class="ib ">2</div>
+    2
+    <div class="ib ">3</div>
+    <div class="ib ">4</div>
+    <div class="ib ">5</div>
+    <div class="ib ">6</div>
+</div>
+
+<p>
+    <a href="http://www.cnblogs.com/StormSpirit/archive/2012/10/17/2726994.html">
+        http://www.cnblogs.com/StormSpirit/archive/2012/10/17/2726994.html
+    </a>
+</p>
+</body>
+</html>

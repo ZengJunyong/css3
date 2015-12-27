@@ -1,0 +1,61 @@
+<!--
+  https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Responsive design</title>
+  <!-- CSS media query on a link element -->
+  <link rel="stylesheet" media="(max-width: 800px)" href="example.css"/>
+
+  <!-- CSS media query within a stylesheet -->
+  <style>
+    @media (max-width: 600px) {
+      .facet_sidebar {
+        display: none;
+      }
+    }
+
+    @media (min-width: 700px) and (orientation: landscape) {
+      .c1 {
+        color: red;
+        background: yellow;
+      }
+    }
+
+    .c2 {
+      display: none;
+    }
+
+    @media tv and (min-width: 700px) and (orientation: landscape) {
+      .c2 {
+        display: inherit;
+      }
+    }
+
+    @media (min-width: 700px), handheld and (orientation: landscape) {
+      .c3 {
+        color: #ffffff;
+        background: red;;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Responsive website</h1>
+
+<div class="facet_sidebar">
+  facet_sidebar
+</div>
+<div class="c1">
+  @media (min-width: 700px) and (orientation: landscape)
+</div>
+<div class="c2">
+  @media tv and (min-width: 700px) and (orientation: landscape)
+</div>
+<div class="c3">
+  @media (min-width: 700px), handheld and (orientation: landscape)
+</div>
+</body>
+</html>

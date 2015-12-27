@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo</title>
+  <style type="text/css">
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  #red, #orange, #yellow, #green {
+    width: 100px;
+    height: 100px;
+    float: left;
+  }
+  #red {
+    background: red;
+  }
+  #orange {
+    background: orange;
+  }
+  #yellow {
+    background: yellow;
+  }
+  #green {
+    background: green;
+  }
+  #c1,#c2 { overflow:hidden; } /*overflow 属性一旦被指定，那么一个新的 Block Formatting Context 就被创建了，它不再围绕浮动元素。*/
+  </style>
+</head>
+<body>
+  <!---详情访问：啥是Block Formatting Context http://www.zhoumingzhi.com/2010/06/24/intro-block-formatting-context/-->
+  <!---Block Formatting Context 能帮助我们做什么？ http://www.feelcss.com/block-formatting-context-can-help-what-we-do.html-->
+  <div id="c1">
+    <div id="red"></div>
+    <div id="orange"></div>
+  </div>
+  <div id="c2">
+    <div id="yellow"></div>
+    <div id="green"></div>
+  </div>
+</body>
+</html>

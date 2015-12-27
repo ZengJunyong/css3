@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo</title>
+  <style type="text/css">
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  #left {
+    width: 100px;
+    height: 100px;
+    background: red;
+    float: left;
+  }
+  #right {
+    height: 200px;
+    background: yellow;
+  }
+  .bfc{ overflow:hidden; zoom:1; }
+  </style>
+</head>
+<body>
+  <!---详情访问：啥是Block Formatting Context http://www.zhoumingzhi.com/2010/06/24/intro-block-formatting-context/-->
+  <div id="left"></div>
+  <div id="right" class="bfc"></div>
+</body>
+</html>

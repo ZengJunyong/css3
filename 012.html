@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css"> 
+
+	*{margin: 0;padding: 0;}
+
+	li{list-style: none;}
+
+	li.opacity{
+		float: left;
+		width: 50px;
+		height: 50px;
+	}
+	li.opacity1 {
+		background: rgb(255,255,0);
+		opacity: 1;
+		filter:alpha(opaity=100);
+	}
+	li.opacity2 {
+		background: rgb(255,255,0);
+		opacity: 0.8;
+		filter:alpha(opaity=80);
+	}
+	li.opacity3 {
+		background: rgb(255,255,0);
+		opacity: 0.6;
+		filter:alpha(opaity=60);
+	}
+	li.opacity4 {
+		background: rgb(255,255,0);
+		opacity: 0.4;
+		filter:alpha(opaity=40);
+	}
+	li.opacity5 {
+		background: rgb(255,255,0);
+		opacity: 0.2;
+		filter:alpha(opaity=20);
+	}
+	li.opacity6 {
+		background: rgb(255,255,0);
+		opacity: 0;
+		filter:alpha(opaity=0);
+	}
+	li.rgba {
+		float: left;
+		width: 50px;
+		height: 50px;
+	}
+	li.rgba1 {
+		background: rgba(255,255,0,1);
+	}
+	li.rgba2 {
+		background: rgba(255,255,0,0.8);
+	}
+	li.rgba3 {
+		background: rgba(255,255,0,0.6);
+	}
+	li.rgba4 {
+		background: rgba(255,255,0,0.4);
+	}
+	li.rgba5 {
+		background: rgba(255,255,0,0.2);
+	}
+	li.rgba6 {
+		background: rgba(255,255,0,0);
+	}
+	.all{
+		/* IE5 - 7 */
+		filter: alpha(opacity=80); 
+		/* IE 8 */
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; 
+		/* Everyone else */
+		opacity: 0.8;
+	}
+	</style>
+	<title>CSS3 Demo</title>
+</head>
+<body>
+	<!---详情访问：http://www.w3cplus.com/resources/css3-tutorial-and-case-->
+	<!-- IE 下面不兼容啊 -->
+	<div class="example-opacity">
+		<p>Opacity效果</p>
+		<ul>
+			<li class="opacity opacity1">100%</li>
+			<li class="opacity opacity2">80%</li>
+			<li class="opacity opacity3">60%</li>
+			<li class="opacity opacity4">40%</li>
+			<li class="opacity opacity5">20%</li>
+			<li class="opacity opacity6">0</li>
+		</ul>
+		<p>CSS3的RGBA效果</p>
+		<ul>
+			<li class="rgba rgba1">1</li>
+			<li class="rgba rgba2">0.8</li>
+			<li class="rgba rgba3">0.6</li>
+			<li class="rgba rgba4">0.4</li>
+			<li class="rgba rgba5">0.2</li>
+			<li class="rgba rgba6">0</li>
+		</ul>
+	</div>
+</body>
+</html>

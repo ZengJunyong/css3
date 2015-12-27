@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css"> 
+
+	*{margin: 0;padding: 0;}
+
+	.example {
+	   width: 150px;
+	   height: 80px;
+	 }
+	.example1 {
+	    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#000));
+	    background: -webkit-linear-gradient(#ccc, #000);
+	    background: -moz-linear-gradient(#ccc, #000);
+	    background: -o-linear-gradient(#ccc, #000);
+	    background: linear-gradient(#ccc, #000);
+	    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ccc, endColorstr=#000);/*IE<9>*/
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ccc, endColorstr=#000)";/*IE8+*/
+	}
+	</style>
+	<title>CSS3 Demo</title>
+</head>
+<body>
+	<!---详情访问：http://www.w3cplus.com/resources/css3-tutorial-and-case-->
+	<!---这么一个例子，IE下面完全不兼容，颜色都不匹配-->
+	<div class="example example1"></div>
+</body>
+</html>

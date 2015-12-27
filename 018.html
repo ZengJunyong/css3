@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css"> 
+
+	*{margin: 0;padding: 0;}
+	
+	.imgBox img{
+		width: 140px;
+		height: 140px;
+		padding: 20px;
+		border: 20px solid orange;
+		margin: 10px;
+	}
+	#contentBox img{
+		-moz-box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		-o-box-sizing: content-box;
+		-ms-box-sizing: content-box;
+		box-sizing: content-box; 
+	}
+
+	#borderBox img{
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	</style>
+	<script src="jquery-1.9.1.js"></script>
+
+	<title>CSS3 Demo</title>
+</head>
+<body>
+	<!---详情访问：http://www.w3cplus.com/resources/css3-tutorial-and-case-->
+	<div class="imgBox" id="contentBox"><img src="/images/header.jpeg" alt="" /></div>
+	<div class="imgBox" id="borderBox"><img src="/images/header.jpeg" alt="" /></div>
+</body>
+</html>
