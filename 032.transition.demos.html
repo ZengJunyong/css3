@@ -1,0 +1,234 @@
+<!--http://css3-magic.brunoscopelliti.com/css3-transition-demos.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #demo-6 .btn {
+            border: 1px solid #333;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            height: 25px;
+            margin: 0 10px;
+            padding: 0 6px;
+            width: 140px;
+        }
+
+        #demo-6 .orange {
+            border-color: #F67E00;
+            background: #E98113;
+        }
+
+        #demo-6 .turquoise {
+            border-color: #09C7EC;
+            background: #71E5FC;
+        }
+
+        #demo-6 .deep {
+            border-color: #005D98;
+            background: #0099C0;
+        }
+
+        #demo-6 .btn img {
+            margin-top: -4px;
+            transform: rotate(20deg);
+            transition: transform .3s ease-in;
+        }
+
+        #demo-6 .btn:hover img, #demo-6 .btn.hover img {
+            transform: rotate(380deg);
+        }
+
+        #demo-6 .btn a {
+            color: #FFF;
+            margin-left: 5px;
+            text-decoration: none;
+            text-shadow: 0 1px 0 #FFF;
+            vertical-align: 50%;
+        }
+
+        #demo-7 button {
+            border: 0;
+            border-radius: 60px;
+            background: #F00;
+            box-shadow: 0 5px 0 #000;
+            color: #FFF;
+            cursor: pointer;
+            font-variant: small-caps;
+            font-weight: bold;
+            height: 60px;
+            padding: 0;
+            text-shadow: 0 1px 0 #EEE;
+            transition: all .1s linear;
+            width: 60px;
+        }
+
+        #demo-7 button:active {
+            box-shadow: 0 2px 0 #666;
+            transform: translateY(3px);
+        }
+
+        #demo-8 #shelf {
+            height: 310px;
+        }
+
+        #demo-8 > p {
+            font-size: 16px;
+            line-height: 22px;
+            margin: 0;
+        }
+
+        #demo-8 .ext {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 0;
+        }
+
+        #demo-8 .ext, #demo-8 .front, #demo-8 .back {
+            height: 260px;
+            padding: 0;
+            width: 165px;
+        }
+
+        #demo-8 .front, #demo-8 .back {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+            background: #FFF;
+            border: 1px solid #666;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #demo-8 .front {
+            z-index: 2;
+        }
+
+        #demo-8 .back {
+            font-size: 11px;
+            padding: 0;
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        #demo-8 .ext:hover .int, #demo-8 .ext.hover .int {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        #demo-8 .int {
+            position: relative;
+            -webkit-transition: .75s;
+            -moz-transition: .75s;
+            -o-transition: .75s;
+            transition: .75s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        #demo-8 .back p {
+            font-size: 11px;
+            margin: 2px 0 0;
+            padding: 0;
+            line-height: 18px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo-6" class="demo">
+    <div class="btn orange" ontouchstart="this.classList.toggle('hover');">
+        <img src="http://brunoscopelliti.com/demo-resources/rss.png"/> <a href="http://blog.brunoscopelliti/feed"
+                                                                          target="_blank">RSS Feed</a>
+
+    </div>
+    <div class="btn turquoise" ontouchstart="this.classList.toggle('hover');">
+        <img src="http://brunoscopelliti.com/demo-resources/twit.png"/> <a href="https://twitter.com/brunoscopelliti"
+                                                                           target="_blank">Twitter</a>
+
+    </div>
+    <div class="btn deep" ontouchstart="this.classList.toggle('hover');">
+        <img src="http://brunoscopelliti.com/demo-resources/linkedin.png"/> <a
+            href="http://it.linkedin.com/pub/bruno-scopelliti/2a/b3a/454" target="_blank">Linkedin</a>
+    </div>
+</div>
+
+<div id="demo-7" class="demo">
+    <button>Push</button>
+</div>
+
+<div id="demo-8" class="demo">
+    <div id="shelf">
+        <p>Great movie posters:</p>
+
+        <div class="ext" ontouchstart="this.classList.toggle('hover');">
+            <div class="int">
+                <div class="front">
+                    <img src="http://brunoscopelliti.com/demo-resources/ep4.png" title="Star Wars IV: A new hope"/>
+                </div>
+                <div class="back"><b>A new hope</b>
+
+                    <p><b>Year</b>: 1977</p>
+
+                    <p><b>Written by</b>: George Lucas</p>
+
+                    <p><b>Music by</b>: John Williams</p>
+
+                    <p><b>Budget</b>: $11 million</p>
+
+                    <p><b>Box office</b>: $775,398,007</p>
+                </div>
+            </div>
+        </div>
+        <div class="ext" ontouchstart="this.classList.toggle('hover');">
+            <div class="int">
+                <div class="front">
+                    <img src="http://brunoscopelliti.com/demo-resources/ep5.png"
+                         title="Star Wars V: The empire strikes back"/>
+                </div>
+                <div class="back"><b>The empire strikes back</b>
+
+                    <p><b>Year</b>: 1980</p>
+
+                    <p><b>Written by</b>: George Lucas</p>
+
+                    <p><b>Music by</b>: John Williams</p>
+
+                    <p><b>Budget</b>: $32 million</p>
+
+                    <p><b>Box office</b>: $538,375,067</p>
+                </div>
+            </div>
+        </div>
+        <div class="ext" ontouchstart="this.classList.toggle('hover');">
+            <div class="int">
+                <div class="front">
+                    <img src="http://brunoscopelliti.com/demo-resources/ep6.png"
+                         title="Star Wars VI: Return of the Jedi"/>
+                </div>
+                <div class="back"><b>Return of the Jedi</b>
+
+                    <p><b>Year</b>: 1983</p>
+
+                    <p><b>Written by</b>: George Lucas</p>
+
+                    <p><b>Music by</b>: John Williams</p>
+
+                    <p><b>Budget</b>: $32,5 million</p>
+
+                    <p><b>Box office</b>: $475,106,177</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

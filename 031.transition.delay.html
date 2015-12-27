@@ -1,0 +1,44 @@
+<!--http://css3-magic.brunoscopelliti.com/css3-color-transition.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #demo-5 .polaroid {
+            border: 1px solid #333;
+            height: 0;
+            margin: 5px auto;
+            padding: 10px 8px 15px;
+            transition: width .4s ease-in, height .4s ease-in .4s;
+            width: 0;
+        }
+
+        #demo-5:hover .polaroid, #demo-5.hover .polaroid {
+            height: 390px;
+            width: 484px;
+            transition: height .4s ease-in, width .4s ease-in .4s;
+        }
+
+        #demo-5 .polaroid img {
+            border: 1px solid #333;
+            opacity: 0;
+            transition: opacity .25s ease-in .8s;
+            visibility: hidden;
+        }
+
+        #demo-5:hover .polaroid img, #demo-5.hover .polaroid img{
+            opacity: 1;
+            visibility: visible;
+        }
+
+    </style>
+</head>
+<body>
+<div id="demo-5" class="demo" ontouchstart="this.classList.toggle('hover');">
+    <div class="polaroid">
+        <img src="http://lorempixel.com/480/360"/>
+    </div>
+</div>
+
+
+</body>
+</html>

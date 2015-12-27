@@ -1,0 +1,46 @@
+<!--http://www.w3schools.com/css/css3_animations.asp-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @keyframes rightRunner {
+            from {
+                left: 20px;
+            }
+            25% {
+                left: 150px;
+                background: #FF0000;
+            }
+            75% {
+                left: 480px;
+                background: #FF0000;
+            }
+            to {
+                left: 610px;
+                background: #ECA950;
+            }
+        }
+
+        #demo-9 .runner {
+            background: #ECA950;
+            border-radius: 40px;
+            height: 50px;
+            width: 50px;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        #demo-9:hover .runner, #demo-9.hover .runner {
+            animation: rightRunner 2s ease-in-out .25s;
+        }
+    </style>
+</head>
+<body>
+
+<div id="demo-9" class="demo" ontouchstart="this.classList.toggle('hover');">
+    <div class="runner"></div>
+</div>
+
+</body>
+</html>

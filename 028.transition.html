@@ -1,0 +1,62 @@
+<!--http://css3-magic.brunoscopelliti.com/css3-transition.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #demo-1 {
+            text-align: center;
+        }
+
+        #demo-1 .mini {
+            display: inline-block;
+            height: 150px;
+            text-align: center;
+            width: 200px;
+        }
+
+        #demo-1 .mini span {
+            display: inline-block;
+            position: absolute;
+            top: 130px;
+            text-align: center;
+            width: 200px;
+        }
+
+        #demo-1 .bubble {
+            background: #EA9629;
+            border-radius: 60px;
+            cursor: pointer;
+            height: 75px;
+            margin: 25px auto 0;
+            opacity: .8;
+            vertical-align: middle;
+            width: 75px;
+        }
+
+        #demo-1 .bubble:hover, #demo-1 .bubble.hover {
+            height: 100px;
+            width: 100px;
+        }
+
+        #demo-1 .transition {
+            transition: all .5s ease-out;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="demo-1" class="demo">
+    <div class="mini">
+        <div class="bubble" ontouchstart="this.classList.toggle('hover');"></div>
+        <span>Classic Behaviour</span>
+    </div>
+    <div class="mini">
+        <div class="bubble transition"></div>
+        <span>CSS3 Transition</span>
+    </div>
+</div>
+
+</body>
+</html>

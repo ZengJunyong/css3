@@ -1,0 +1,77 @@
+<!--http://css3-magic.brunoscopelliti.com/css3-color-transition.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        #demo-3 > ul {
+            border: 1px solid #333;
+            padding: 0 10px;
+        }
+
+        #demo-3 > ul li {
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+        #demo-3 > ul li + li {
+            border-left: 1px solid #333;
+        }
+
+        #demo-3 > ul li.submenu {
+            min-width: 87px;
+        }
+
+        #demo-3 > ul li.submenu > ul {
+            border: 1px solid #333;
+            border-top: 0;
+            height: 0;
+            margin: 5px 0 0 -11px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            transition: height .4s cubic-bezier(0, 1.8, 1, 1.8);
+            width: 111px;
+        }
+
+        #demo-3 > ul li.submenu:hover > ul, #demo-3 > ul li.submenu.hover > ul {
+            height: 96px;
+        }
+
+        #demo-3 > ul li.submenu > ul li {
+            border: 0;
+            font-size: 12px;
+            margin: 0;
+            text-align: left;
+        }
+
+        #demo-3 li a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="demo-3" class="demo">
+    <ul>
+        <li class="icon" target="_blank"><a href="http://blog.brunoscopelliti.com/">Home</a>
+        </li>
+        <li><a href="http://blog.brunoscopelliti.com/about/" target="_blank">About</a>
+        </li>
+        <li class="submenu" ontouchstart="this.classList.toggle('hover');"><a href="#">Categories</a>
+
+            <ul>
+                <li><a href="http://blog.brunoscopelliti.com/category/code/" target="_blank">Code</a>
+                </li>
+                <li><a href="http://blog.brunoscopelliti.com/category/fast-tricks/" target="_blank">Fast Tricks</a>
+                </li>
+                <li><a href="http://blog.brunoscopelliti.com/category/mondays-fun/" target="_blank">Monday's Fun</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="http://blog.brunoscopelliti.com/contact/" target="_blank">Contact</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

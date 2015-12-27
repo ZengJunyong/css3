@@ -1,0 +1,211 @@
+<!--http://www.w3schools.com/css/css3_animations.asp-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* open slide */
+        @keyframes slideRight {
+            from {
+                width: 238px;
+            }
+            to {
+                width: 440px;
+            }
+        }
+
+        /* close slide */
+        @keyframes slideLeft {
+            from {
+                width: 440px;
+            }
+            to {
+                width: 238px;
+            }
+        }
+
+        /* fadeIn content */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 1UP effect */
+        @keyframes oneUp {
+            from {
+                opacity: 1;
+                bottom: 25px;
+            }
+            to {
+                opacity: 0;
+                bottom: 50px;
+            }
+        }
+
+        #demo-12 .slider {
+            border: 1px solid #666;
+            padding: 1px;
+            width: 238px;
+            height:299px;
+        }
+
+        #demo-12 .slider.open {
+            animation: slideRight .3s linear forwards;
+        }
+
+        #demo-12 .slider.close {
+            animation: slideLeft .3s linear;
+        }
+
+        #demo-12 .primary {
+            float: left;
+        }
+
+        #demo-12 .secondary {
+            float: right;
+        }
+
+        #demo-12 .cnt-ext {
+            background: #FFF;
+            display: none;
+            float: left;
+            height: 299px;
+            margin: 0;
+            opacity: 0;
+            padding: 0;
+            padding-right: 5px;
+            position: relative;
+            width: 190px;
+        }
+
+        #demo-12 .cnt-ext.fadeIn {
+            display: inline-block;
+            animation: fadeIn .75s linear forwards;
+        }
+
+        #demo-12 .pull {
+            cursor: pointer;
+            display: inline-block;
+            float: right;
+            height: 157px;
+            margin: 0;
+            padding: 0;
+            padding-top: 140px;
+            padding-right: 2px;
+            width: 15px;
+        }
+
+        #demo-12 .cnt-ext h3 {
+            font-size: 16px;
+            font-variant: small-caps;
+            line-height: 24px;
+            margin: 0;
+        }
+
+        #demo-12 .cnt-ext p {
+            font-size: 13px;
+            line-height: 20px;
+            margin: 5px 0 20px;
+        }
+
+        #demo-12 .cnt-ext .one-up {
+            color: #008000;
+            display: none;
+            font-size: 14px;
+            font-weight: bold;
+            opacity: 1;
+            position: absolute;
+            bottom: 25px;
+            left: 70px;
+        }
+
+        #demo-12 .cnt-ext .one-up.exit {
+            display: block;
+            animation: oneUp .5s linear forwards;
+        }
+
+        #demo-12 .cnt-ext .btn {
+            background: #000;
+            border: 1px solid #333;
+            color: #FFF;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 8px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            width: 184px;
+        }
+
+        #demo-12 .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<div id="demo-12" class="demo">
+    <div class="slider">
+        <div class="primary">
+            <img src="http://brunoscopelliti.com/demo-resources/wired.png"/>
+        </div>
+        <div class="secondary">
+            <div class="cnt-ext">
+                <h3>Wired</h3>
+
+                <p>This section could be filled with details about the item.
+                    <br/>Please click on the following button to see the effect.</p>
+
+                <div class="one-up">Yahoo!</div>
+                <div class="btn">Add to Cart</div>
+            </div>
+            <div class="pull">►</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<script src="jquery-1.9.1.js"></script>
+<script>
+    $(function () {
+        $("#demo-12 .pull").on("click", function () {
+            /* expand/contract */
+            var $sliderBox = $("#demo-12 .slider");
+            if (!$sliderBox.hasClass("open")) {
+                $sliderBox.addClass("open").removeClass("close");
+            } else {
+                $sliderBox.addClass("close").removeClass("open");
+            }
+        });
+
+        $("#demo-12 .slider").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+            /* set symbol */
+            var sign = ($("#demo-12 .slider").hasClass("open")) ? "▪" : "►";
+            $(".pull").text(sign);
+            /* show content */
+            if ($(".slider").hasClass("open")) {
+                $(".cnt-ext").addClass("fadeIn");
+            } else {
+                $(".cnt-ext").removeClass("fadeIn");
+            }
+        });
+
+        $("#demo-12 .btn").on("click", function () {
+            // start 1UP effect
+            $(this).siblings(".one-up").addClass("exit");
+        });
+
+        $("#demo-12 .one-up").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+            /* remove the class that triggers the animation */
+            $(this).removeClass("exit");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--http://css3-magic.brunoscopelliti.com/css3-color-transition.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #nav {
+            opacity: .25;
+        }
+
+        #nav:hover {
+            opacity: 1;
+        }
+
+        #nav ul {
+            list-style: none;
+        }
+
+        #nav ul li {
+            background: #CA3C08;
+            border-radius: 25px;
+            display: block;
+            height: 30px;
+            transition: background .3s linear,
+            height .25s ease-out,
+            width .25s ease-out;
+            width: 30px;
+        }
+
+        #nav ul li:hover {
+            background: #EA9629;
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="nav">
+    <ul>
+        <li class="item">
+            <a href="#" title="First Item">1</a>
+        </li>
+        <li class="item">
+            <a href="#" title="Second Item">2</a>
+        </li>
+        <li class="item">
+            <a href="#" title="Third Item">3</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

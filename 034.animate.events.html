@@ -1,0 +1,136 @@
+<!--http://www.w3schools.com/css/css3_animations.asp-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .demo {
+            background: #F5F2F0;
+            font-size: 16px;
+            line-height: 22px;
+            margin: 10px auto;
+            padding: 15px 10px;
+            width: 660px;
+        }
+
+        @keyframes rightRunner {
+            from {
+                left: 20px;
+                -webkit-animation-timing-function: ease-in;
+            }
+            25% {
+                left: 150px;
+                background: #FF0000;
+            }
+            75% {
+                left: 480px;
+                background: #FF0000;
+                -webkit-animation-timing-function: ease-in;
+            }
+            to {
+                left: 610px;
+                background: #ECA950;
+            }
+        }
+
+        #demo-10 {
+            min-height: 80px;
+            position: relative;
+        }
+
+        #demo-10 #ctrl {
+            padding: 0 10px;
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+
+        #demo-10 #ctrl button {
+            cursor: pointer;
+            font-variant: small-caps;
+        }
+
+        #demo-10 .runner {
+            background: #ECA950;
+            border-radius: 40px;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        #demo-10 .runner.enable {
+            animation: rightRunner 2s ease-in-out .25s 3;
+        }
+
+        #demo-10 .runner.pause {
+            animation-play-state: paused;
+        }
+
+        #demo-10 .runner.inverse {
+            animation-direction: reverse;
+        }
+    </style>
+</head>
+<body>
+
+<div id="demo-10" class="demo">
+    <div class="runner"></div>
+    <div id="ctrl">
+        <button class="start">Start Animation</button>
+        <button class="break">Pause Animation</button>
+        <button class="revert">Invert Direction</button>
+    </div>
+</div>
+<script src="jquery-1.9.1.js"></script>
+<script>
+    $(function () {
+        $("#demo-10 .start").on('click', function () {
+            // start/stop animation
+            $("#demo-10 .runner").toggleClass("enable").removeClass("pause");
+            var t = (!$("#demo-10 .runner").hasClass("enable")) ? "Start Animation" : "Stop Animation";
+            $(this).text(t);
+            $("#demo-10 .break").text("Pause Animation");
+        });
+
+        $("#demo-10 .break").on('click', function () {
+            // pause/play animation
+            if ($("#demo-10 .runner").hasClass("enable")) {
+                $("#demo-10 .runner").toggleClass("pause");
+                var t = ($("#demo-10 .runner").hasClass("pause")) ? "Restart Animation" : "Pause Animation";
+                $(this).text(t);
+            }
+        });
+
+        $("#demo-10 .revert").on('click', function () {
+            // invert direction of the animation
+            $("#demo-10 .runner").toggleClass("inverse")
+        });
+
+        $("#demo-10 .runner").on('webkitAnimationStart oanimationstart msAnimationStart animationstart', function (e) {
+            // fired when the animation starts
+            console.dir(e.originalEvent);
+            console.info(" > Animation is started right now.");
+        });
+
+        $("#demo-10 .runner").on('webkitAnimationIteration oanimationiteration msAnimationIteration animationiteration', function (e) {
+            // fired every time an animation cycle is completed
+            var animated = $(this);
+            animated.addClass("pause");
+            setTimeout(function () {
+                animated.removeClass("pause");
+            }, 1000);
+        });
+
+        $("#demo-10 .runner").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+            // fired when the animation ends
+            console.dir(e.originalEvent);
+            console.info(" > Animation is finished right now.");
+            $("#demo-10 .start").click();
+        });
+    });
+</script>
+
+
+</body>
+</html>
